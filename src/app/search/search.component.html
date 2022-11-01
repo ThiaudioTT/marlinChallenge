@@ -1,26 +1,16 @@
 <div>
-    <h1>Exibindo resultados de busca por "RESULTADO BUSCA@#@##@#"</h1>
-    <h5>Encontramos um total de X resultados para sua busca</h5>
-</div>
+  <label for="searchInput">
+    <p>Procurando alguma notícia?</p>
+    <!-- adicionar icone da lupa -->
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="Pesquisar por..."
+      [(ngModel)]="searchValue" 
+      (search)="onSearchInput()"
+      />
+      <!-- NG MODEL IS REALLY NEEDED? i think not -->
 
-<div>
-    <nav>
-        <span>Categorias</span>
-        <ul>
-            <li><a href="#">Categoria 1</a></li>
-            <li><a href="#">Categoria 2</a></li>
-            <li><a href="#">Categoria 3</a></li>
-            <li><a href="#">Categoria 4</a></li>
-        </ul>
-    </nav>
-
-    <div>
-        <p>Procurando alguma notícia?</p>
-        <!-- adicionar icone da lupa -->
-        <input type="text" placeholder="Pesquisar por..."> 
-    </div>
-</div>
-
-<div>
-    
+      <!-- (input) = 'onSearchInput()' -->
+  </label>
 </div>
