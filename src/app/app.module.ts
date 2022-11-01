@@ -12,6 +12,7 @@ import { SearchpageComponent } from './searchpage/searchpage.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import { NewsapiService } from './service/newsapi.service';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NewsapiService } from './service/newsapi.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    LoadingBarHttpClientModule
   ],
   providers: [NewsapiService],
   bootstrap: [AppComponent]

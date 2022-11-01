@@ -1,7 +1,12 @@
-<p>home works!</p>
-
-<div *ngFor="let d of news ">
-    {{d.title}}
+<ngx-loading-bar height="5px" [includeSpinner]="false" ></ngx-loading-bar>
+<div class='container'>
+    <div class="row">
+        <!-- making this as a component should be great? -->
+        <div *ngFor="let n of news.slice(-7);" class="news-box">
+            <img src="{{n.image}}" alt="Imagem da notícia" class="news-image">
+            <h5>{{n.title}}</h5>
+            <p>{{n.body}}</p>
+            <a href="#">Leia mais</a>
+        </div>
+    </div>
 </div>
-
-<p>off</p>
