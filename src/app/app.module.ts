@@ -10,6 +10,9 @@ import { SearchComponent } from './search/search.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 
+import {HttpClientModule} from '@angular/common/http';
+import { NewsapiService } from './service/newsapi.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +25,10 @@ import { SearchpageComponent } from './searchpage/searchpage.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [NewsapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
