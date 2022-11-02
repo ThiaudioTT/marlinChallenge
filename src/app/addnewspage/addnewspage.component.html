@@ -1,1 +1,23 @@
-<p>addnewspage works!</p>
+<ng-container>
+    <h1>Adicione uma noticiaL</h1>
+
+    <div>
+        <label for="title">Titulo
+            <input type="text" id="title" name="title" [(ngModel)]="newsObj.title">
+        </label>
+
+        <label for="body">Descrição
+            <input type="text" id="body" name="body" [(ngModel)]="newsObj.body">
+        </label>
+
+        <label for="image">URL da imagem
+            <input type="text" id="image" name="image" [(ngModel)]="newsObj.image">
+        </label>
+    </div>
+
+    <div>
+        <button (click)="addNews()">Adicionar</button>
+    </div>
+
+
+</ng-container>
