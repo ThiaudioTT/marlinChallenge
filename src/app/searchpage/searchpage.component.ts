@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { NewsapiService } from '../service/newsapi.service'
-import { firstValueFrom } from 'rxjs'
 
 // algoritmo de busca imutavel
 // Not perfectly, but it works, for now.
