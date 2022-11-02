@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
 
   onSearchInput() {
     //precondition invalid input
-    if (this.searchValue === '') return;
+    if (this.searchValue === '') return; // do nothing when press enter
     
     console.log(this.searchValue)
 

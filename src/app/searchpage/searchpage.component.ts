@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 import { NewsapiService } from '../service/newsapi.service'
 
 // algoritmo de busca imutavel
@@ -23,12 +23,15 @@ export class SearchpageComponent implements OnInit {
   data: any = []
   constructor(
     private route: ActivatedRoute,
-    private _services: NewsapiService
+    private router: Router,
+    private _services: NewsapiService,
   ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.search = params['s']
+      if(this.search === undefined) {this.router.navigate(['']); throw new Error('Search is undefined')};
+
       // get data from service
       this._services.getAllNews().subscribe((result) => {
         console.log(result)

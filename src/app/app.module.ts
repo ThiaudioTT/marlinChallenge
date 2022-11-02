@@ -12,6 +12,8 @@ import { SearchpageComponent } from './searchpage/searchpage.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NewsapiService } from './service/newsapi.service';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { TopheadComponent } from './tophead/tophead.component';
+import { AddnewspageComponent } from './addnewspage/addnewspage.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
     HomeComponent,
     SearchComponent,
     SidebarComponent,
-    SearchpageComponent
+    SearchpageComponent,
+    TopheadComponent,
+    AddnewspageComponent
   ],
   imports: [
     BrowserModule,
