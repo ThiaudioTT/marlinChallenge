@@ -14,8 +14,7 @@ export class HomeComponent implements OnInit {
   news:any = [];
 
   ngOnInit(): void {
-    this._services.getLastNews().subscribe((result) => {
-      console.log(result);
+    this._services.getAllNews().subscribe((result) => {
       this.news = result;
       console.log(this.news);
     })

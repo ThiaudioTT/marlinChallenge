@@ -1,5 +1,18 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
+import { NewsapiService } from '../service/newsapi.service';
+
+
+// algoritmo de busca imutavel
+// Not perfectly, but it works, for now.
+function searchAlgorithm(s:string , data: Array<object>): Array<Object> {
+  s = s.trim().toLowerCase();
+  return data.filter(
+    (news: any) => {
+      return news['title'] === null ? false : news['title'].trim().toLowerCase() === s;
+    }
+  )
+}
 
 @Component({
   selector: 'app-searchpage',
@@ -7,12 +20,27 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./searchpage.component.scss'],
 })
 export class SearchpageComponent implements OnInit {
-  search: string = ''
-  constructor(private route: ActivatedRoute) {
-    this.route.queryParams.subscribe((params) => {
-      this.search = params['s']
-    })
-  }
+  search: string = '';
+  data:any = [];
+  constructor(
+    private route: ActivatedRoute,
+    private _services: NewsapiService
+    ) {}
+    
+    ngOnInit(): void {
+      this.route.queryParams.subscribe((params) => {
+        this.search = params['s'];
+  
+        
+        // get data from service
+        this._services.getAllNews().subscribe((result) => {
+          this.data = result;
+        });
 
-  ngOnInit(): void {}
+        // search data
+        this.data = searchAlgorithm(this.search, this.data);
+        console.log(this.data);
+      })
+      
+  }
 }
