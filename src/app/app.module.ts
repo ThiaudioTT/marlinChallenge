@@ -27,7 +27,7 @@ import { CardComponent } from './card/card.component';
     TopheadComponent,
     AddnewspageComponent,
     NewsComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
     BrowserModule,

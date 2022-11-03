@@ -20,6 +20,11 @@ export class NewsapiService {
     return this._http.get( this.newsApiUrl );
   }
 
+  /*GET - RETURN A SINGLE NEWS */
+  getNewsById(id: number):Observable<any> {
+    return this._http.get( this.newsApiUrl + "/" + id ); // looks dangerous
+  }
+
   // generate the id through the size of the json pls
   /*POST */
   addNews(news: News):Observable<any> {
