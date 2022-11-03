@@ -7,17 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-
-  constructor( private router: Router) { }
-
+  constructor( private router: Router) {}
+  
   @Input () image: string = "";
   @Input () title: string = "";
+  readonly sizeOfBody = 150;
   @Input () body: string = "";
-
   // metadata
   @Input () id: string = ""; // string or number?
-
+  
   ngOnInit(): void {
+    // adiciona ... ao final do body se o tamanho for maior que o definido
+    this.body = this.body.substring(0, this.sizeOfBody) + "...";
+    console.log(this.body);
   }
 
   // navega para pagina de detalhes (news) com uma query indicando a noticia
