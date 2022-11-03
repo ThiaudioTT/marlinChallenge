@@ -15,6 +15,7 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { TopheadComponent } from './tophead/tophead.component';
 import { AddnewspageComponent } from './addnewspage/addnewspage.component';
 import { NewsComponent } from './news/news.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NewsComponent } from './news/news.component';
     SearchpageComponent,
     TopheadComponent,
     AddnewspageComponent,
-    NewsComponent
+    NewsComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
