@@ -3,7 +3,7 @@
 <div class="news-container">
 
     <!-- Slice eh algo opcional -->
-    <div *ngFor="let n of news.slice(-6)" class="item">
+    <div *ngFor="let n of news.slice(0,6)" class="item">
 
         <app-card
             [image]="n.image"

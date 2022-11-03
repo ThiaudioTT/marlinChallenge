@@ -19,7 +19,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     // adiciona ... ao final do body se o tamanho for maior que o definido
     if(this.body.length > this.sizeOfBody)
-      this.body = this.body.substring(0, this.sizeOfBody) + "...";
+      this.body = this.body.substring(0, this.sizeOfBody) + "..."; // do this with title too?
   }
 
   // navega para pagina de detalhes (news) com uma query indicando a noticia
