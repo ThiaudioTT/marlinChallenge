@@ -1,7 +1,11 @@
-<ng-container>
+<div class="card-box">
     <img src="{{ image }}" alt="Imagem da notícia" class="news-image" />
-    <h5>{{ title }}</h5>
-    <p>{{ body }}</p>
-    <button (click)="readMore()">Leia mais</button>
-    <!-- add a Created att to the card component -->
-</ng-container>
+
+    <div class="news-content">
+        <h3 class="title">{{ title }}</h3>
+        <p>{{ body }}</p>
+        <button (click)="readMore()">Ler mais</button>
+    </div>
+    
+
+</div>

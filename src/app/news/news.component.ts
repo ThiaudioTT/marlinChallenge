@@ -15,7 +15,9 @@ export class NewsComponent implements OnInit {
     
     private route: ActivatedRoute,
     private services: NewsapiService,
-    ) {}
+    ) {
+      this.news.title = "Carregando notícia..."; // pode servir como um loading, temporario.
+    }
     
     ngOnInit(): void {
       

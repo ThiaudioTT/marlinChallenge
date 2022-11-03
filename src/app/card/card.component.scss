@@ -1,0 +1,46 @@
+.card-box {
+    width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    
+    overflow: hidden;
+
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    .news-image {
+        width: 100%;
+    }
+
+    .news-content {
+        .title {
+            margin-top: 16px;
+            margin-bottom: 2px;
+        }
+
+        //padding: 0px 16px 16px 16px;
+        padding: 16px;
+        padding-top: 0px;
+
+        p {
+            color: #424242;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+    }
+
+    button {
+        all: unset;
+        color: #0b6285;
+        font-weight: bold;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+}
