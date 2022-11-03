@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CardComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor( private router: Router) { }
 
   @Input () image: string = "";
   @Input () title: string = "";
@@ -23,7 +23,7 @@ export class CardComponent implements OnInit {
   // navega para pagina de detalhes (news) com uma query indicando a noticia
   readMore() {
     this.router.navigate(['news'], {
-      relativeTo: this.route,
+      relativeTo: null,
       queryParams: {
         id: this.id,
       },
