@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './sidebar/search/search.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 
