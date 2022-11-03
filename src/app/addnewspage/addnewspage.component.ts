@@ -8,9 +8,8 @@ import { News } from '../service/news'
   styleUrls: ['./addnewspage.component.scss'],
 })
 export class AddnewspageComponent implements OnInit {
-  title = ''
-  image = ''
-  body = ''
+
+  // object news para ser adicionado.
   newsObj = new News()
 
   data = [];
@@ -29,7 +28,8 @@ export class AddnewspageComponent implements OnInit {
   }
 
   addNews() {
-    if(!this.title || !this.image || !this.body) {window.alert('Por favor, preencha todos os campos'); return;}
+    if(!this.newsObj.title || !this.newsObj.body || !this.newsObj.image) {window.alert('Por favor, preencha todos os campos'); return;}
+    
     try {
       this.newsApi.addNews(this.newsObj).subscribe((data) => {
         this.refreshNews()
