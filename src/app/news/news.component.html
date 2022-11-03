@@ -1,1 +1,8 @@
-<p>news works!</p>
+<ng-container>
+    
+    <h1>{{news.title}}</h1>
+    <img [src]="news.image" [alt]="news.title" />
+    <p>{{news.createdAt}}</p>
+    <p>{{news.body}}</p>
+
+</ng-container>
