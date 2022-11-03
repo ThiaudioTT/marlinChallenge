@@ -29,6 +29,7 @@ export class AddnewspageComponent implements OnInit {
   }
 
   addNews() {
+    if(!this.title || !this.image || !this.body) {window.alert('Por favor, preencha todos os campos'); return;}
     try {
       this.newsApi.addNews(this.newsObj).subscribe((data) => {
         this.refreshNews()

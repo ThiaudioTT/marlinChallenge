@@ -1,23 +1,25 @@
 <ng-container>
     <h1>Adicione uma noticiaL</h1>
 
+    <form>
     <div>
         <label for="title">Titulo
-            <input type="text" id="title" name="title" [(ngModel)]="newsObj.title">
+            <input type="text" id="title" name="title" [(ngModel)]="newsObj.title" required>
         </label>
 
         <label for="body">Descrição
-            <input type="text" id="body" name="body" [(ngModel)]="newsObj.body">
+            <input type="text" id="body" name="body" [(ngModel)]="newsObj.body" required>
         </label>
 
         <label for="image">URL da imagem
-            <input type="text" id="image" name="image" [(ngModel)]="newsObj.image">
+            <input type="text" id="image" name="image" [(ngModel)]="newsObj.image" required>
         </label>
     </div>
 
     <div>
         <button (click)="addNews()">Adicionar</button>
     </div>
+    </form>
 
 
 </ng-container>
