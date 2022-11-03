@@ -1,17 +1,17 @@
-<ngx-loading-bar height="5px" [includeSpinner]="false" ></ngx-loading-bar>
-<div class='container'>
-    <div class="row">
-        <!-- making this as a component should be great? -->
-        <div *ngFor="let n of news.slice(-7);" class="news-box">
-            <app-card
-                [image]="n.image"
-                [title]="n.title"
-                [body]="n.body"
-                [id]="n.id"></app-card>
-            <!-- <img src="{{n.image}}" alt="Imagem da notícia" class="news-image">
-            <h5>{{n.title}}</h5>
-            <p>{{n.body}}</p>
-            <a href="#">Leia mais</a> -->
-        </div>
+<ngx-loading-bar height="5px" [includeSpinner]="false"></ngx-loading-bar>
+
+<div class="news-container">
+
+    <!-- Slice eh algo opcional -->
+    <div *ngFor="let n of news.slice(-6)" class="item">
+
+        <app-card
+            [image]="n.image"
+            [title]="n.title"
+            [body]="n.body"
+            [id]="n.id"
+        ></app-card>
+
     </div>
+
 </div>
