@@ -2,14 +2,26 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { NewsapiService } from '../service/newsapi.service'
 
-// algoritmo de busca imutavel
-// Not perfectly, but it works, for now.
+/**
+ * Usa um algoritmo de busca baseado em regex, não é 100% perfeito como um sistema Google, 
+ * mas funciona.
+ * 
+ * @param s string de pesquisa
+ * @param data database
+ * @returns database filtrada
+ */
 function searchAlgorithm(s: string, data: Array<Object>): Array<Object> {
-  s = s.trim().toLowerCase()
-  return data.filter((news: any) => {
-    return news['title'] === null
-      ? false
-      : news['title'].trim().toLowerCase() === s
+  s = s.trim().toLowerCase(); // remove espaços e deixa tudo em minúsculo
+
+  return data.filter((obj: any) => {
+    if(obj.title === null || obj.body === null) return false; // isso esta aqui por conta de entradas nulas no banco de dados
+
+
+    const title: string = obj['title'].trim().toLowerCase(); // pega o titulo e deixa tudo em minúsculo
+    // \w* eh para dar match em casos -> cat -> catsss...
+    const regex: RegExp = new RegExp(s + "\\\w*"); 
+    console.log(regex);
+    return regex.test(title); // retorna falso ou verdadeiro se o titulo contem a string de pesquisa
   })
 }
 
