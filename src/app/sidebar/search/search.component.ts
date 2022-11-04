@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router'
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  constructor(private _route: ActivatedRoute, private _router: Router) {}
+  constructor( private _router: Router) {}
   ngOnInit(): void {}
 
   searchValue: string = ''
@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit {
     console.log(this.searchValue)
 
     this._router.navigate(['search'], {
-      relativeTo: this._route,
+      relativeTo: null, // relative to root
       queryParams: {
         s: this.searchValue,
       },
