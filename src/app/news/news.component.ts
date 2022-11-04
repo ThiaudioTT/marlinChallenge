@@ -29,6 +29,9 @@ export class NewsComponent implements OnInit {
         this.services.getNewsById(this.id).subscribe((result) => {
           this.news = result;
           console.log("News get: ", this.news);
+
+          // make date readable
+          this.news.createdAt = new Date(this.news.createdAt).toLocaleString();
         })
       })
     }
