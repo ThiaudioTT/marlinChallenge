@@ -1,44 +1,42 @@
-<ng-container>
+<div class="add-news-page">
     <h1>Adicione uma notícia</h1>
 
     <form>
-        <div>
-            <label for="title"
-                >Titulo
-                <input
-                    type="text"
-                    id="title"
-                    name="title"
-                    [(ngModel)]="newsObj.title"
-                    required
-                />
-            </label>
+        <label for="title" class="formItem">
+            <p>Titulo</p>
+            <input class="input" 
+                type="text"
+                id="title"
+                name="title"
+                [(ngModel)]="newsObj.title"
+                required
+            />
+        </label>
 
-            <label for="body"
-                >Descrição
-                <input
-                    type="text"
-                    id="body"
-                    name="body"
-                    [(ngModel)]="newsObj.body"
-                    required
-                />
-            </label>
+        <label for="body" class="formItem">
+            <p>Descrição</p>
+            <textarea class="input"
+                type="text"
+                id="body"
+                name="body"
+                [(ngModel)]="newsObj.body"
+                required
+            ></textarea>
+        </label>
 
-            <label for="image"
-                >URL da imagem
-                <input
-                    type="text"
-                    id="image"
-                    name="image"
-                    [(ngModel)]="newsObj.image"
-                    required
-                />
-            </label>
-        </div>
+        <label for="image" class="formItem"
+            ><p>URL da imagem</p>
+            <input class="input"
+                type="text"
+                id="image"
+                name="image"
+                [(ngModel)]="newsObj.image"
+                required
+            />
+        </label>
 
-        <div>
-            <button (click)="addNews()">Adicionar</button>
+        <div class="button-container">
+            <button class="submit" (click)="addNews()">Adicionar</button>
         </div>
     </form>
-</ng-container>
+</div>

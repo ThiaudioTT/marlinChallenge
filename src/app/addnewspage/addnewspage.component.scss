@@ -1,0 +1,68 @@
+.add-news-page {
+    width: 50vw;
+}
+
+
+form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+
+    .formItem {
+        margin-top: 10px;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        .input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            margin-top: 0;
+
+            &:focus {
+                background-color: #f0f0f0;
+            }
+
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+    }
+
+
+    .button-container {
+        text-align: end;
+        .submit {
+            width: 30%;
+            margin-top: 10px;
+    
+            background-color: #e7e7e7;
+            border: none;
+            color: black;
+            padding: 10px 10px;
+            text-align: center;
+
+            &:hover {
+                background-color: #cccccc;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .add-news-page {
+        width: auto;
+    }
+    form {
+        width: 100%;
+    }
+}
+    
