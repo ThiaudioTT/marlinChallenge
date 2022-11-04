@@ -18,10 +18,12 @@ function searchAlgorithm(s: string, data: Array<Object>): Array<Object> {
 
 
     const title: string = obj['title'].trim().toLowerCase(); // pega o titulo e deixa tudo em minúsculo
+    const body: string = obj['body'].trim().toLowerCase(); // a engine fica mais eficiente quando pesquisa no body, tambem.
+    const image: string = obj['image'].trim().toLowerCase(); // nomes de imagens podem ser uteis.
+
     // \w* eh para dar match em casos -> cat -> catsss...
     const regex: RegExp = new RegExp(s + "\\\w*"); 
-    console.log(regex);
-    return regex.test(title); // retorna falso ou verdadeiro se o titulo contem a string de pesquisa
+    return regex.test(title) || regex.test(body) || regex.test(image); // retorna falso ou verdadeiro se o titulo ou body contem a string de pesquisa
   })
 }
 
