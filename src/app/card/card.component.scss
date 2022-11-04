@@ -44,3 +44,9 @@
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 720px) {
+    .card-box {
+        width: 100%;
+    }
+}
