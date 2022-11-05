@@ -7,13 +7,14 @@ import { NewsapiService } from '../service/newsapi.service'
     styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-    constructor(private _services: NewsapiService) {}
+    constructor(private services: NewsapiService) {}
 
     // display data
     news: any = []
 
     ngOnInit(): void {
-        this._services.getAllNews().subscribe((result) => {
+        // pega os dados do DB
+        this.services.getAllNews().subscribe((result) => {
             this.news = result
             console.log(this.news)
         })

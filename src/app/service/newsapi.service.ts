@@ -8,28 +8,36 @@ import { News } from './news'
 })
 export class NewsapiService {
     constructor(private _http: HttpClient) {}
-
     // News API
-    private newsApiUrl =
-        'https://5cf9ae9df26e8c00146cff8d.mockapi.io/api/v1/post'
+    private newsApiUrl = 'https://5cf9ae9df26e8c00146cff8d.mockapi.io/api/v1/post';
 
-    /*GET */
+
+    /** GET
+     * 
+     * @returns Todas as noticias
+     */
     getAllNews(): Observable<any> {
         return this._http.get(this.newsApiUrl)
     }
 
-    /*GET - RETURN A SINGLE NEWS */
+    /** GET
+     * 
+     * @param id - id da noticia no DB
+     * @returns - noticia com o id especificado
+     */
     getNewsById(id: number): Observable<any> {
         return this._http.get(this.newsApiUrl + '/' + id)
     }
 
-    // generate the id through the size of the json pls
-    /*POST */
+    /** POST
+     * Posta a noticia no DB
+     * 
+     * @param news - noticia a ser adicionada
+     */
     addNews(news: News): Observable<any> {
         const headers = { 'content-type': 'application/json' }
-        const body = JSON.stringify(news)
-        console.log('POSTING: ', body)
+        const body = JSON.stringify(news) // transforma o objeto news em json
+        // console.log('POSTING: ', body)
         return this._http.post(this.newsApiUrl, body, { headers: headers })
-        //return this._http.get( this.newsApiUrl );
     }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { NewsapiService } from '../service/newsapi.service'
 import { News } from '../service/news'
+import { timeInterval } from 'rxjs'
 
 @Component({
     selector: 'app-addnewspage',
@@ -8,7 +9,7 @@ import { News } from '../service/news'
     styleUrls: ['./addnewspage.component.scss'],
 })
 export class AddnewspageComponent implements OnInit {
-    // object news para ser adicionado.
+    // objeto news para ser adicionado.
     newsObj = new News()
 
     data = []
@@ -19,9 +20,12 @@ export class AddnewspageComponent implements OnInit {
         this.refreshNews()
     }
 
+    /**
+     * Atualiza a lista de noticias na var data
+     */
     refreshNews() {
         this.newsApi.getAllNews().subscribe((data) => {
-            console.log('Refreshed data: ', data)
+            // console.log('Refreshed data: ', data)
             this.data = data
         })
     }
@@ -37,15 +41,17 @@ export class AddnewspageComponent implements OnInit {
             return
         }
 
-        try {
-            this.newsApi.addNews(this.newsObj).subscribe((data) => {
+        this.newsApi.addNews(this.newsObj).subscribe({
+            next: (/*data*/) => { // data a ser criada
                 this.refreshNews()
                 window.alert('Notícia adicionada com sucesso!')
                 window.location.reload()
-            })
-        } catch (error) {
-            window.alert('Erro ao adicionar notícia!')
-            console.log(error)
-        }
+            },
+            error: (err) => {
+                window.alert('Erro ao adicionar notícia!')
+                console.log("Erro em addnewspage: ", err);
+                throw err;
+            },
+        })
     }
 }

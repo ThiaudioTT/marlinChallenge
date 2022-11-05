@@ -14,8 +14,10 @@ function searchAlgorithm(s: string, data: Array<Object>): Array<Object> {
     s = s.trim().toLowerCase() // remove espaços e deixa tudo em minúsculo
 
     return data.filter((obj: any) => {
-        if (obj.title === null || obj.body === null) return false // isso esta aqui por conta de entradas nulas no banco de dados
+        // PRECONDITION: isso esta aqui por conta de entradas nulas no banco de dados
+        if (obj.title === null || obj.body === null) return false 
 
+        // vamos fazer a pesquisa nos itens abaixo
         const title: string = obj['title'].trim().toLowerCase() // pega o titulo e deixa tudo em minúsculo
         const body: string = obj['body'].trim().toLowerCase() // a engine fica mais eficiente quando pesquisa no body, tambem.
         const image: string = obj['image'].trim().toLowerCase() // nomes de imagens podem ser uteis.
@@ -37,23 +39,24 @@ export class SearchpageComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private _services: NewsapiService
+        private services: NewsapiService
     ) {}
 
     ngOnInit(): void {
+        // observa a query param na url e faz a pesquisa
         this.route.queryParams.subscribe((params) => {
             this.search = params['s']
-            if (this.search === undefined) {
-                this.router.navigate([''])
+            if (this.search === undefined || this.search === '') {
+                this.router.navigate(['404'])
                 throw new Error('Search is undefined')
             }
 
             // get data from service
-            this._services.getAllNews().subscribe((result) => {
-                console.log(result)
+            this.services.getAllNews().subscribe((result) => {
+                //console.log(result)
                 this.data = result
                 this.data = searchAlgorithm(this.search, this.data)
-                console.log('Searched: ', this.data)
+                //console.log('Searched: ', this.data)
             })
         })
     }

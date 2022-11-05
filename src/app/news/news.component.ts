@@ -8,7 +8,6 @@ import { NewsapiService } from '../service/newsapi.service'
     styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent implements OnInit {
-    // id = this.route.snapshot.paramMap.get('id');
     id: any = ''
     news: any = {}
     constructor(
@@ -20,20 +19,24 @@ export class NewsComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        // pega o parametro id da url
         this.route.queryParams.subscribe((params) => {
             this.id = params['id']
+            if (this.id === undefined || this.id === '') {
+                this.router.navigate(['404'])
+                throw new Error('Id não encontrada');
+            }
+
             // get data from service
             this.services.getNewsById(this.id).subscribe({
-                next: (result) => {
+                next: (result) => { // pega o resultado e atribui a variavel news
                     this.news = result
-                    console.log('News get: ', this.news)
+                    // console.log('News get: ', this.news)
 
                     // make date readable
-                    this.news.createdAt = new Date(
-                        this.news.createdAt
-                    ).toLocaleString()
+                    this.news.createdAt = new Date(this.news.createdAt).toLocaleString()
                 },
-                error: (error) => {
+                error: (error) => { // em caso erro.
                     this.router.navigate(['404'])
                     throw error
                 },
