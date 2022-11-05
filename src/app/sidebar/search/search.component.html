@@ -1,7 +1,6 @@
 <div>
     <label for="searchInput">
         <p>Procurando alguma notícia?</p>
-        <!-- adicionar icone da lupa -->
         <input
             id="searchInput"
             type="search"
@@ -9,7 +8,5 @@
             [(ngModel)]="searchValue"
             (search)="onSearchInput()"
         />
-        <!-- NG MODEL IS REALLY NEEDED? i think not -->
-        <!-- (input) = 'onSearchInput()' -->
     </label>
 </div>

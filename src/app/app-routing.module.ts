@@ -7,7 +7,6 @@ import { SearchpageComponent } from './searchpage/searchpage.component'
 import { NewsComponent } from './news/news.component'
 import { NotFoundComponent } from './not-found/not-found.component'
 
-// declare a 404 route
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'search', component: SearchpageComponent },

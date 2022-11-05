@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Router, ActivatedRoute } from '@angular/router'
+import { Router } from '@angular/router'
 
 @Component({
     selector: 'app-search',
@@ -7,24 +7,28 @@ import { Router, ActivatedRoute } from '@angular/router'
     styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-    constructor(private _router: Router) {}
+    constructor(private router: Router) {}
     ngOnInit(): void {}
 
     searchValue: string = ''
 
+    /**
+     * pesquisa o input do usuario usando queryParams, 
+     * a pagina '/search' que irá receber o parametro 's' e fazer a pesquisa
+     */
     onSearchInput() {
         //precondition invalid input
         if (this.searchValue === '') return // do nothing when press enter
 
-        console.log(this.searchValue)
+        // console.log(this.searchValue)
 
-        this._router.navigate(['search'], {
+        this.router.navigate(['search'], {
             relativeTo: null, // relative to root
             queryParams: {
                 s: this.searchValue,
             },
             queryParamsHandling: 'merge',
-            skipLocationChange: false, // false for now
+            skipLocationChange: true, // hide the url
         })
     }
 }
