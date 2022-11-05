@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
         // pega os dados do DB
         this.services.getAllNews().subscribe((result) => {
             this.news = result
-            console.log(this.news)
+            // console.log(this.news)
         })
     }
 }
