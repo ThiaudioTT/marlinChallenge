@@ -2,7 +2,6 @@
     width: 50vw;
 }
 
-
 form {
     width: 500px;
     display: flex;
@@ -25,7 +24,6 @@ form {
             &:focus {
                 background-color: #f0f0f0;
             }
-
         }
 
         textarea {
@@ -33,16 +31,14 @@ form {
             min-height: 120px;
             resize: vertical;
         }
-        
     }
-
 
     .button-container {
         text-align: end;
         .submit {
             width: 30%;
             margin-top: 10px;
-    
+
             background-color: #e7e7e7;
             border: none;
             color: black;
@@ -56,7 +52,6 @@ form {
     }
 }
 
-
 @media screen and (max-width: 850px) {
     .add-news-page {
         width: auto;
@@ -65,4 +60,3 @@ form {
         width: 100%;
     }
 }
-    

@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-tophead',
-  templateUrl: './tophead.component.html',
-  styleUrls: ['./tophead.component.scss']
+    selector: 'app-tophead',
+    templateUrl: './tophead.component.html',
+    styleUrls: ['./tophead.component.scss'],
 })
 export class TopheadComponent implements OnInit {
+    constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {}
 }

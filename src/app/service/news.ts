@@ -1,5 +1,5 @@
 export class News {
-    title: string = "";
-    image: string = "";
-    body: string = "";
+    title: string = ''
+    image: string = ''
+    body: string = ''
 }

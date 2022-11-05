@@ -1,17 +1,13 @@
 <ngx-loading-bar height="5px" [includeSpinner]="false"></ngx-loading-bar>
 
 <div class="news-container">
-
     <!-- Slice eh algo opcional -->
-    <div *ngFor="let n of news.slice(0,6)" class="item">
-
+    <div *ngFor="let n of news.slice(0, 6)" class="item">
         <app-card
             [image]="n.image"
             [title]="n.title"
             [body]="n.body"
             [id]="n.id"
         ></app-card>
-
     </div>
-
 </div>

@@ -4,10 +4,11 @@
     <div class="search-head">
         <h1>Exibindo resultado de busca por "{{ search }}"</h1>
         <p class="subtitle">
-            Encontramos um total de {{ data.length }} resultados para a sua busca
+            Encontramos um total de {{ data.length }} resultados para a sua
+            busca
         </p>
     </div>
-    
+
     <div class="news-container">
         <div *ngFor="let n of data" class="item">
             <app-card
