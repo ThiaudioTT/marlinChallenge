@@ -1,0 +1,16 @@
+.notfound-page {
+    width: 90vw;
+}
+
+.notfound-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 860px) {
+    .notfound-page {
+        width: auto;
+    }
+}

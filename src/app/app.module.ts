@@ -16,6 +16,7 @@ import { TopheadComponent } from './tophead/tophead.component';
 import { AddnewspageComponent } from './addnewspage/addnewspage.component';
 import { NewsComponent } from './news/news.component';
 import { CardComponent } from './card/card.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CardComponent } from './card/card.component';
     AddnewspageComponent,
     NewsComponent,
     CardComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
